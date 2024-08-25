@@ -18,7 +18,7 @@ It is a CRM management web app in which following feartures are as:
 
 ## Development setup locally and manually
 
-clone repo: 
+clone repo: git clone https://github.com/nitin251198/ERP_CRM.git
 
 cd ERP_FUllSTACK/api 
 1.  npm install to install all dependencies
