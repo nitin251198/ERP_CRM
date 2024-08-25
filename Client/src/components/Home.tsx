@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '../components/NavBar';
 import Dashboard from './Dashboard'; // Assuming you have a TaskList component
+import illustration from '../assets/undraw_access_account_re_8spm.svg';
 
 const HomePage: React.FC = () => {
   return (
@@ -16,9 +17,9 @@ const HomePage: React.FC = () => {
         <Dashboard />
       </div>:
      <div className="flex flex-col items-center justify-center min-h-screen text-center">
-     <img src="/path/to/illustration.png" alt="Illustration" className="mb-8 w-1/2 max-w-md" />
+     <img src={illustration} alt="Illustration" className="mb-6 w-1/2 max-w-md" />
      <div>
-       <h1 className="m-10 text-3xl">Please Login to get your Data!</h1>
+       <h1 className="m-6 text-3xl">Please Login to get your Data!</h1>
      </div>
    </div>
    
