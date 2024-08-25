@@ -1,0 +1,28 @@
+{
+  "swaggerDefinition": {
+    "openapi": "3.0.1",
+    "info": {
+      "title": "Customer Management API",
+      "description": "API for Customer Management Project",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000/api/v1",
+        "description": "Local Server"
+      }
+    ],
+    "components": {
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "apiKey",
+          "name": "Authorization",
+          "scheme": "bearer",
+          "in": "header",
+          "bearerFormat": "JWT"
+        }
+      }
+    }
+  },
+  "apis": ["./src/routes/*.js"]
+}

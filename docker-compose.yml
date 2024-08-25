@@ -1,0 +1,47 @@
+version: '3.4'
+
+services:
+  api:
+    container_name: api
+    restart: always
+    image: backend-api:latest
+    build:
+      context: ./api
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+      PORT: 5000
+      MONGO_URI_LOCAL: mongodb://mongo:27017/user-management
+      JWT_SECRET: gkjhkfjjheur4676878fjfhgi46
+      JWT_EXPIRE: 30d
+      JWT_COOKIE_EXPIRE: 30
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongo
+    tty: true
+    
+  Client:
+    container_name: frontend-client
+    restart: always
+    image: frontend-client:latest
+    build:
+      context: ./Client
+      dockerfile: ./Dockerfile
+    ports:
+      - '3000:3000'
+    depends_on:
+      - api
+    tty: true
+
+  mongo:
+    container_name: mongo
+    restart: always
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo:/data/db
+
+volumes:
+  mongo:
